@@ -7,7 +7,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(), vueDevTools()],
-  base: '/fit5032/',
+  base: './', // ← 改为相对路径！
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
