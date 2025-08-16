@@ -47,7 +47,7 @@ export default {
     // 获取天气图标URL
     iconUrl() {
       return this.weatherData
-        ? `http://api.openweathermap.org/img/w/${this.weatherData.weather[0].icon}.png`
+        ? `https://api.openweathermap.org/img/w/${this.weatherData.weather[0].icon}.png`
         : null
     }
   },
@@ -61,7 +61,7 @@ export default {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(async (position) => {
           const { latitude, longitude } = position.coords
-          const url = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apikey}`
+          const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apikey}`
           await this.fetchWeatherData(url)
         })
       }
@@ -70,7 +70,7 @@ export default {
     // 通过城市名搜索天气
     async searchByCity() {
       if (this.city.trim()) {
-        const url = `http://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${apikey}`
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${apikey}`
         await this.fetchWeatherData(url)
       }
     },
