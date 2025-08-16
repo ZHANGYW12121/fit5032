@@ -25,6 +25,8 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+// 直接导入 JSON 文件
+import authorsData from '@/assets/json/authors.json'
 
 const authors = ref([])
 const loading = ref(false)
@@ -45,14 +47,8 @@ const getApiData = async () => {
   error.value = null
 
   try {
-    const response = await fetch('src/assets/json/authors.json')
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`)
-    }
-
-    const data = await response.json()
-    authors.value = data
+    // 直接使用导入的数据，不需要 fetch
+    authors.value = authorsData
 
     calculateStats()
 
