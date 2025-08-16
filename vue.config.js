@@ -1,6 +1,3 @@
 module.exports = {
-  publicPath:
-    process.env.NODE_ENV === 'production'
-      ? './' // 改为相对路径
-      : '/'
+  publicPath: process.env.NODE_ENV === 'production' ? '/fit5032/' : '/'
 }
