@@ -1,3 +1,4 @@
-module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/fit5032/' : '/'
-}
+export default defineConfig({
+  plugins: [vue()],
+  base: './' // 或者 base: '/'
+})
